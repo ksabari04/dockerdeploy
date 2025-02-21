@@ -1,0 +1,11 @@
+FROM mysql:8.0
+
+# Copy custom entrypoint script
+COPY mysql-db-imp.sh /mysql-db-imp.sh
+RUN chmod +x /entrypoint.sh
+
+# Copy SQL files
+COPY ./sql/carrental.sql /docker-entrypoint-initdb.d/carrental.sql
+
+# Set custom entrypoint
+ENTRYPOINT ["/mysql-db-imp.sh"]
