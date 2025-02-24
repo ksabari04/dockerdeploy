@@ -7,21 +7,26 @@ services:
       dockerfile: Dockerfile
     container_name: apache-php-container
     ports:
-      - "80:80"
-      - "443:443"
+      - "80:80"         # HTTP
+      - "443:443"       # HTTPS
     volumes:
-      - ./carrental:/var/www/html
+      - ./carrental:/var/www/html  # Map carrental folder as Apache's root directory
     depends_on:
       - mysql
     environment:
-      VIRTUAL_HOST: sabaricars.zapto.org
+      VIRTUAL_HOST: rental.geocareindia.com
       CERTBOT_EMAIL: vasansabari608@gmail.com
     restart: always
 
   mysql:
-    image: sabari88389/my-mysql:v1
+    image: mysql:8.0
     container_name: mysql-container
     restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - "3306:3306"
     volumes:
@@ -33,7 +38,7 @@ services:
     depends_on:
       - mysql
     ports:
-      - "8081:80"
+      - "8080:80"
     environment:
       PMA_HOST: mysql
       PMA_USER: root
