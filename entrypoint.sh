@@ -3,7 +3,7 @@
 # Start Apache in the background
 apachectl -D FOREGROUND &
 
-# Wait for Apache to fully start
+# Wait for Apache to fully started
 sleep 5
 
 # Run Certbot to obtain and configure SSL certificate
