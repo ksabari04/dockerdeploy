@@ -14,7 +14,7 @@ services:
     depends_on:
       - mysql
     environment:
-      VIRTUAL_HOST: rapidoooo.zapto.org
+      VIRTUAL_HOST: sabarivasan.zapto.org
       CERTBOT_EMAIL: vasansabari608@gmail.com
     restart: always
 
