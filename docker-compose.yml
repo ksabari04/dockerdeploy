@@ -14,7 +14,7 @@ services:
     depends_on:
       - mysql
     environment:
-      VIRTUAL_HOST: myhost2004.ddns.net
+      VIRTUAL_HOST: carrental.ddns.net
       CERTBOT_EMAIL: vasansabari608@gmail.com
     restart: always
 
