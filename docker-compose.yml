@@ -14,7 +14,7 @@ services:
     depends_on:
       - mysql
     environment:
-      VIRTUAL_HOST: sabaricars.ddns.net
+      VIRTUAL_HOST: shoppingportal.zapto.org
       CERTBOT_EMAIL: vasansabari608@gmail.com
     restart: always
 
