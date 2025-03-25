@@ -10,7 +10,7 @@ services:
       - "80:80"         # HTTP
       - "443:443"       # HTTPS
     volumes:
-      - ./carrental/:/var/www/html  # Map carrental folder as Apache's root directory
+      - ./shopping/:/var/www/html  # Map carrental folder as Apache's root directory
     depends_on:
       - mysql
     environment:
