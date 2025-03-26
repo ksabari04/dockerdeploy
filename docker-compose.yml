@@ -10,11 +10,11 @@ services:
       - "80:80"         # HTTP
       - "443:443"       # HTTPS
     volumes:
-      - ./shopping/:/var/www/html  # Map carrental folder as Apache's root directory
+      - ./tms/:/var/www/html  # Map carrental folder as Apache's root directory
     depends_on:
       - mysql
     environment:
-      VIRTUAL_HOST: shoppingportal.zapto.org
+      VIRTUAL_HOST: sabaritourism.ddns.net
       CERTBOT_EMAIL: vasansabari608@gmail.com
     restart: always
 
